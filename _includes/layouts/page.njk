@@ -1,0 +1,31 @@
+---
+layout: layouts/base
+---
+
+<div class="post">
+  {% if page.hero_img %}
+  <section class="hero" style="background-image:url('{{ page.hero_img }}')">
+    <div class="hero__content">
+      <h1>{{ page.title }}</h1>
+      <button class="btn  btn--white  btn--big" onclick="triggerBuy()">Buy now</button>
+    </div>
+  </section>
+  {% endif %}
+
+  <header class="post-header  row">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <article class="post-content  row">
+    {{ content | safe }}
+  </article>
+
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+  <a class="gumroad-button" href="{{ page.buy_link}}" target="_blank">Buy my product</a>
+  <script>
+    function triggerBuy() {
+      document.querySelector('.gumroad-button').click();
+    }
+  </script>
+
+</div>

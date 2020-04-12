@@ -1,0 +1,52 @@
+---
+layout: base
+---
+
+<div class="post">
+  {% set product = products[product_key] %}
+  {% if product.hero_img %}
+  <section class="hero" style="background-image:url('{{ product.hero_img }}')">
+    <div class="hero__content">
+      <h1>{{ product.label }}</h1>
+
+      {% if product.buy_link %}
+      <a class="btn btn--white  btn--big" href="{{ product.buy_link }}"
+        >Buy now</a
+      >
+      {% endif %} {% if product.whatsapp %}
+      <a class="btn btn--white  btn--big" href="tel:9990551429"
+        >Whatsapp 9990551429 to order</a
+      >
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <header class="post-header  row">
+    <h1 class="post-title">{{ product.label }}</h1>
+  </header>
+
+  <article class="post-content  row">
+    <p class="ta-c">
+      <img src="{{ product.image }}" />
+    </p>
+
+    {{ content | safe }}
+  </article>
+
+  <p class="ta-c">
+    {% if product.buy_link %}
+    <a class="btn btn--black  btn--big" href="{{ product.buy_link }}"
+      >Buy now</a
+    >
+    {% endif %} {% if product.whatsapp %}
+    <a class="btn btn--black  btn--big" href="tel:9990551429"
+      >Whatsapp 9990551429 to order</a
+    >
+    {% endif %}
+  </p>
+
+  {% if product.onsite_purchase %}
+  <!-- <script src="https://gumroad.com/js/gumroad.js"></script> -->
+  {% endif %}
+</div>

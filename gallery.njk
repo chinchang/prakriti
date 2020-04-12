@@ -1,0 +1,91 @@
+---
+layout: page
+title: Gallery
+permalink: /gallery/
+---
+
+<style>
+      .thumbnails {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+      }
+      .gallery-full-image {
+          display:none;
+      }
+      {% for i in range(1, 26) %}
+      #thumb-{{loop.index}}:checked ~ * #full-image-{{loop.index}} {
+          display: block;
+      }
+      {% endfor %}
+      .gallery-radio {
+          display: none;
+      }
+      .thumbnail {
+          margin-bottom: 0!important;
+      }
+      .thumbnail img {
+          padding: 0;
+      }
+      .mobile-gallery {
+          max-width: 100%;
+          overflow-x: scroll;
+          display: none;
+      }
+      .mobile-gallery {
+          white-space: nowrap;
+      }
+      .mobile-gallery-image {
+          height: 90vh;
+          max-width: initial;
+      }
+  @media screen and (max-width: 800px) {
+      .mobile-gallery {
+          display: block;
+      }
+      .thumbnails, .gallery-full-image {
+          display: none!important;
+      }
+  }
+</style>
+
+<div style="display: flex; flex-direction: column-reverse;">
+  {% for i in range(1, 26) %} <input {% if loop.index==1 %}checked{% endif %}
+  type="radio" name="thumbnails" class="gallery-radio"
+  id="thumb-{{loop.index}}"> {% endfor %}
+
+  <ul class="thumbnails">
+    {% for i in range(1, 26) -%}
+    <li class="thumbnail">
+      <label tabindex="0" role="button" for="thumb-{{loop.index}}">
+        <div>
+          <img
+            src="https://ik.imagekit.io/prakriti/tr:h-100/gallery/{{loop.index}}.jpg"
+          />
+        </div>
+      </label>
+    </li>
+    {%- endfor %}
+  </ul>
+
+  <div>
+    {% for i in range(1, 26) -%}
+    <img
+      id="full-image-{{loop.index}}"
+      class="gallery-full-image"
+      src="https://ik.imagekit.io/prakriti/gallery/{{loop.index}}.jpg"
+    />
+    {%- endfor %}
+  </div>
+
+  <div class="mobile-gallery">
+    <div class="mobile-gallery-wrap">
+      {% for i in range(1, 26) -%}
+      <img
+        class="mobile-gallery-image"
+        src="https://ik.imagekit.io/prakriti/gallery/{{loop.index}}.jpg"
+      />
+      {%- endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  {% include "head.html" %}
+
+  <body>
+
+
+    {% include "header.html" %}
+    <div class="outer-wrap">
+
+      <div class="content-wrap">
+      {{ content | safe }}
+      </div>
+
+      {% include "footer.html" %}
+
+    </div>
+
+    {% include "analytics.html" %}
+
+    <!-- <script async=true src="/js/simplezoom.js"></script> -->
+  </body>
+
+</html>
