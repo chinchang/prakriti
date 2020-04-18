@@ -4,49 +4,36 @@ layout: base
 
 <div class="post">
   {% set product = products[product_key] %}
-  {% if product.hero_img %}
-  <section class="hero" style="background-image:url('{{ product.hero_img }}')">
-    <div class="hero__content">
-      <h1>{{ product.label }}</h1>
 
-      {% if product.buy_link %}
-      <a class="btn btn--white  btn--big" href="{{ product.buy_link }}"
-        >Buy now</a
-      >
-      {% endif %} {% if product.whatsapp %}
-      <a class="btn btn--white  btn--big" href="tel:9990551429"
-        >Whatsapp 9990551429 to order</a
-      >
-      {% endif %}
+  <div style="text-align:center; margin:1rem 0;">
+    <a href="/products">Products</a> / {{ product.label }}
+  </div>
+
+  <div class="product-header">
+    <div>
+      <img class="product-image" src="{{ product.image }}" />
     </div>
-  </section>
-  {% endif %}
 
-  <header class="post-header  row">
-    <h1 class="post-title">{{ product.label }}</h1>
-  </header>
+    <div class="product-summary stack">
+      <h1 class="product-title">{{ product.label }}</h1>
+      <p class="product-price">{{ product.price }}</p>
+      <div>
+        Order now on
+        <a class="btn btn--buy-now" href="tel:9990551429">
+          Whatsapp: 9990551429</a
+        >
+        or
+        <a class="btn btn--buy-now" href="tel:9990551429"> Call: 8700907337</a>
+      </div>
+    </div>
+  </div>
 
-  <article class="post-content  row">
-    <p class="ta-c">
-      <img src="{{ product.image }}" />
-    </p>
-
+  <div class="product-desc">
     {{ content | safe }}
-  </article>
+  </div>
 
-  <p class="ta-c">
-    {% if product.buy_link %}
-    <a class="btn btn--black  btn--big" href="{{ product.buy_link }}"
-      >Buy now</a
-    >
-    {% endif %} {% if product.whatsapp %}
-    <a class="btn btn--black  btn--big" href="tel:9990551429"
-      >Whatsapp 9990551429 to order</a
-    >
-    {% endif %}
-  </p>
+  <div style="text-align:center; margin:1rem 0;">
+    <a href="/products">See more products</a>
+  </div>
 
-  {% if product.onsite_purchase %}
-  <!-- <script src="https://gumroad.com/js/gumroad.js"></script> -->
-  {% endif %}
 </div>

@@ -7,14 +7,14 @@ name: products
 <div class="text--center row tile-container">
   {% for product_key in products.list %} {% set product = products[product_key]
   %}
-  <div class="summary-tile">
+  <a class="summary-tile" href="{{product.permalink}}">
     <div
       class="summary-tile__img"
       style="background-image:url('{{product.image}}')"
     ></div>
     <div class="summary-tile__title">
-      <a href="{{product.permalink}}">{{product.label}}</a>
+      {{product.label}}
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
