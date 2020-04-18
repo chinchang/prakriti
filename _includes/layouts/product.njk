@@ -5,80 +5,10 @@ layout: base
 <div class="post">
   {% set product = products[product_key] %}
 
-  <style>
-    .stack > *:not(:last-child) {
-      margin-bottom: 1.5rem;
-    }
-    .stack > :last-child {
-      margin-bottom: 0;
-    }
-    .product-header {
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
-    }
-    .product-summary {
-      padding: 2rem 5rem 2rem 2rem;
-      margin-left: 2rem;
-      background-color: white;
-      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
-      clip-path: polygon(0px 0, 100% 0, calc(100% - 90px) 114%, 0 100%);
-    }
-    .product-title {
-      font-size: calc(6vw + 16px);
-      line-height: calc(6vw + 16px);
-      letter-spacing: -3px;
-      margin: 1rem 0 1rem;
-      font-family: Georgia, "Times New Roman", Times, serif;
-    }
-    .product-image {
-      max-width: 250px;
-    }
-    .product-price {
-      font-size: 2rem;
-      margin: 0 0 1rem;
-      color: coral;
-    }
-    .btn--buy-now {
-      white-space: nowrap;
-      margin: 0.5rem 0;
-      font-size: 1.5em;
-      border-radius: 13px;
-      border-color: #266e24;
-      color: white;
-      background: #26af23
-        linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.2),
-          transparent 90%,
-          rgba(255, 255, 255, 0.6)
-        );
-    }
-    .btn--buy-now:hover,
-    .btn--buy-now:focus {
-      background: #266e24;
-      color: white;
-    }
+  <div style="text-align:center; margin:1rem 0;">
+    <a href="/products">Products</a> / {{ product.label }}
+  </div>
 
-    .product-desc {
-      margin: 2rem auto;
-      max-width: 70ch;
-      font-family: Georgia, "Times New Roman", Times, serif;
-    }
-    @media screen and (max-width: 900px) {
-      .product-summary {
-        margin-left: 0;
-      }
-      .product-summary {
-        padding: 1rem 1rem;
-        clip-path: polygon(0px 0, 100% 0, calc(100% - 40px) 114%, 0 100%);
-      }
-      .product-header {
-        flex-wrap: wrap;
-        padding: 0;
-      }
-    }
-  </style>
   <div class="product-header">
     <div>
       <img class="product-image" src="{{ product.image }}" />
@@ -101,4 +31,9 @@ layout: base
   <div class="product-desc">
     {{ content | safe }}
   </div>
+
+  <div style="text-align:center; margin:1rem 0;">
+    <a href="/products">See more products</a>
+  </div>
+
 </div>

@@ -3,14 +3,20 @@
 *:before {
   box-sizing: border-box;
 }
+:root {
+  --color-body: #444;
+  --color-bg: white;
+  --fz-body: 1.4em;
 
+  --summary-tile-width: 250px;
+}
 body {
-  color: #444;
+  color: var(--color-body);
   /* font-family: 'montserrat', sans-serif; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
-  font-size: 1.4em;
+  font-size: var(--fz-body);
   line-height: 1.5;
 }
 
@@ -57,6 +63,13 @@ body {
 
 a {
   color: #a76a23;
+}
+
+.stack > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.stack > :last-child {
+  margin-bottom: 0;
 }
 
 a:hover {
@@ -299,24 +312,39 @@ img {
 }
 
 .summary-tile {
-  width: 20vw;
-  width: 370px;
+  display: block; /* its an <a> tag */
+  /* width: 20vw; */
+  width: var(--summary-tile-width);
   padding: 0;
   margin: 20px;
   overflow: hidden;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgba(43, 59, 93, 0.29);
+  transition: box-shadow 0.3s ease;
+}
+.summary-tile:hover {
+  box-shadow: 0 15px 18px rgba(43, 59, 93, 0.29);
 }
 
 .summary-tile__img {
   height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: top 7px left 50%;
   transition: 0.4s ease;
+  position: relative;
 }
-
+.summary-tile__img:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(0deg, white 0, transparent);
+}
 .summary-tile__title {
   padding: 20px;
 }
@@ -452,5 +480,72 @@ img {
   .testimonial__body:before {
     font-size: 6em;
     top: 36px;
+  }
+}
+
+.product-header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.product-summary {
+  padding: 2rem 5rem 2rem 2rem;
+  margin-left: 2rem;
+  background-color: white;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+  clip-path: polygon(0px 0, 100% 0, calc(100% - 90px) 114%, 0 100%);
+}
+.product-title {
+  font-size: calc(4vw + 2rem);
+  line-height: calc(4vw + 2rem);
+  letter-spacing: -3px;
+  margin: 1rem 0 1rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.product-image {
+  max-width: 250px;
+}
+.product-price {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  color: coral;
+}
+.btn--buy-now {
+  white-space: nowrap;
+  margin: 0.5rem 0;
+  font-size: 1.5em;
+  border-radius: 13px;
+  border-color: #266e24;
+  color: white;
+  background: #26af23
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      transparent 90%,
+      rgba(255, 255, 255, 0.6)
+    );
+}
+.btn--buy-now:hover,
+.btn--buy-now:focus {
+  background: #266e24;
+  color: white;
+}
+
+.product-desc {
+  margin: 2rem auto;
+  max-width: 70ch;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+@media screen and (max-width: 900px) {
+  .product-summary {
+    margin-left: 0;
+  }
+  .product-summary {
+    padding: 1rem 1rem;
+    clip-path: polygon(0px 0, 100% 0, calc(100% - 40px) 114%, 0 100%);
+  }
+  .product-header {
+    flex-wrap: wrap;
+    padding: 0;
   }
 }
