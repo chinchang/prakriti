@@ -12,6 +12,11 @@ layout: base
     .stack > :last-child {
       margin-bottom: 0;
     }
+    .product-header {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
     .product-summary {
       padding: 2rem 5rem 2rem 2rem;
       margin-left: 2rem;
@@ -20,9 +25,9 @@ layout: base
       clip-path: polygon(0px 0, 100% 0, calc(100% - 90px) 114%, 0 100%);
     }
     .product-title {
-      font-size: 7vw;
-      line-height: 7vw;
-      letter-spacing: -6px;
+      font-size: calc(6vw + 16px);
+      line-height: calc(6vw + 16px);
+      letter-spacing: -3px;
       margin: 1rem 0 1rem;
       font-family: Georgia, "Times New Roman", Times, serif;
     }
@@ -30,12 +35,14 @@ layout: base
       max-width: 250px;
     }
     .product-price {
-      font-size: 3vw;
+      font-size: 2rem;
       margin: 0 0 1rem;
       color: coral;
     }
     .btn--buy-now {
-      font-size: 2em;
+      white-space: nowrap;
+      margin: 0.5rem 0;
+      font-size: 1.5em;
       border-radius: 13px;
       border-color: #266e24;
       color: white;
@@ -47,13 +54,32 @@ layout: base
           rgba(255, 255, 255, 0.6)
         );
     }
+    .btn--buy-now:hover,
+    .btn--buy-now:focus {
+      background: #266e24;
+      color: white;
+    }
+
     .product-desc {
       margin: 2rem auto;
       max-width: 70ch;
       font-family: Georgia, "Times New Roman", Times, serif;
     }
+    @media screen and (max-width: 900px) {
+      .product-summary {
+        margin-left: 0;
+      }
+      .product-summary {
+        padding: 1rem 1rem;
+        clip-path: polygon(0px 0, 100% 0, calc(100% - 40px) 114%, 0 100%);
+      }
+      .product-header {
+        flex-wrap: wrap;
+        padding: 0;
+      }
+    }
   </style>
-  <div style="display: flex; justify-content:center; padding: 2rem;">
+  <div class="product-header">
     <div>
       <img class="product-image" src="{{ product.image }}" />
     </div>
@@ -62,7 +88,12 @@ layout: base
       <h1 class="product-title">{{ product.label }}</h1>
       <p class="product-price">{{ product.price }}</p>
       <div>
-        <a class="btn btn--buy-now" href="tel:9990551429">Buy Now</a>
+        Order now on
+        <a class="btn btn--buy-now" href="tel:9990551429">
+          Whatsapp: 9990551429</a
+        >
+        or
+        <a class="btn btn--buy-now" href="tel:9990551429"> Call: 8700907337</a>
       </div>
     </div>
   </div>
