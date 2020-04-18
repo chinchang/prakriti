@@ -36,7 +36,7 @@
     "price": "₹ 150 / 30ml bottle"
   },
   "herbalspray": {
-    "label": "Prakriti Herbal Spray",
+    "label": "Herbal Spray",
     "permalink": "/products/herbal-spray/",
     "image": "/images/products/herbal-spray.png",
     "hero_img": "/images/products/herbal-spray.png",
@@ -44,7 +44,7 @@
     "price": "₹ 150 / 100ml bottle"
   },
   "keshtail": {
-    "label": "Prakriti Ayurvedic Kesh Tail",
+    "label": "Kesh Tail",
     "permalink": "/products/kesh-tail/",
     "image": "/images/products/kesh-tail.png",
     "hero_img": "/images/products/kesh-tail.png",
@@ -52,7 +52,7 @@
     "price": "₹ 120 / 100ml bottle"
   },
   "gomutraasav": {
-    "label": "Prakriti Gomutra Asav",
+    "label": "Gomutra Asav",
     "permalink": "/products/gomutra-asav/",
     "image": "/images/products/gomutra-asav.png",
     "hero_img": "/images/products/gomutra-asav.png",
@@ -60,7 +60,7 @@
     "price": "₹ 120 / 400ml bottle"
   },
   "haldighanvati": {
-    "label": "Prakriti Haldi Gomutra Ghanvati",
+    "label": "Haldi Gomutra Ghanvati",
     "permalink": "/products/haldi-ghanvati/",
     "image": "/images/products/haldi-ghanvati.png",
     "hero_img": "/images/products/haldi-ghanvati.png",
@@ -68,14 +68,14 @@
     "price": "₹ 120 / 60 tablets"
   },
   "giloyadiark": {
-    "label": "Prakriti Giloyadi Gomutra Ark",
+    "label": "Giloyadi Gomutra Ark",
     "permalink": "/products/giloyadi-ark/",
     "image": "/images/products/giloyadi-ark.png",
     "hero_img": "/images/products/giloyadi-ark.png",
     "price": "₹ 170 / 400ml bottle"
   },
   "punarnavadiark": {
-    "label": "Prakriti Punarnavadi Ark",
+    "label": "Punarnavadi Ark",
     "permalink": "/products/punarnavadi-ark/",
     "image": "/images/products/punarnavadi-ark.png",
     "hero_img": "/images/products/punarnavadi-ark.png",
