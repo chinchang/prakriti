@@ -1,5 +1,6 @@
 {
   "list": [
+    "ironghee",
     "ghee",
     "angrakshakmrida",
     "panchgavyaghrit",
@@ -16,6 +17,15 @@
     "image": "/images/products/ghee.png",
     "hero_img": "/images/products/ghee.jpg",
     "price": "₹ 1199 / 500ml",
+    "whatsapp": true,
+    "onsite_purchase": true
+  },
+  "ironghee": {
+    "label": "Desi Cow Bilona Ghee (Iron vessel)",
+    "permalink": "/products/a2-cow-ghee-iron",
+    "image": "/images/products/ghee-kadai.png",
+    "hero_img": "/images/products/ghee.jpg",
+    "price": "₹ 1355 / 500ml (7.5% discount on 1 litre and above)",
     "whatsapp": true,
     "onsite_purchase": true
   },
