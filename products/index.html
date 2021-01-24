@@ -4,6 +4,12 @@ title: Products
 name: products
 ---
 
+<div style="display: flex; justify-content: center; margin-bottom: 1rem">
+  <a download href="/static/prakriti-catalogue.pdf" class="btn"
+    >Download complete product catalogue</a
+  >
+</div>
+
 <div class="text--center row tile-container">
   {% for product_key in products.list %} {% set product = products[product_key]
   %}
@@ -12,9 +18,7 @@ name: products
       class="summary-tile__img"
       style="background-image:url('{{product.image}}')"
     ></div>
-    <div class="summary-tile__title">
-      {{product.label}}
-    </div>
+    <div class="summary-tile__title">{{product.label}}</div>
   </a>
   {% endfor %}
 </div>
